@@ -1,0 +1,43 @@
+			body{
+                background: url(../../images/bg5.jpg);
+                background-size: 100%;
+            }
+            .row{	
+                margin: 0 !important;
+            }
+            #loginbox{
+                margin-top:50px;
+            }
+            .display_none{
+                display: none;
+            }
+            .forgot_pass{
+                float:right; font-size: 80%; position: relative; top:-10px;
+            }
+            .panel-body{
+                padding-top:30px;
+            }
+            #loginform div.input-group{
+                margin-bottom: 25px;
+            }
+            .marTop10{
+                margin-top: 10px;
+            }
+            .signUpBtn div{
+                border-top: 1px solid#888; padding-top:15px; font-size:85%;                
+            }
+            .marTop30{
+                margin-top: 30px;
+            }
+            .marTop50{
+                margin-top: 50px;
+            }
+            .signUpTitle{
+                float:right; font-size: 85%; position: relative; top:-10px;
+            }
+            .SignUpFacebook{
+                border-top: 1px solid #999; padding-top:20px;
+            }
+            .error{
+                color: red;
+            }

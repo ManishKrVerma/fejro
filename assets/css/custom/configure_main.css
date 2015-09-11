@@ -1,0 +1,6 @@
+.display_none{
+	display: none;
+}
+.error, .required{
+	color:red;
+}

@@ -1,0 +1,31 @@
+.rtl .logo {
+	text-align: left;
+}
+.rtl #left-menu .menu li.parent:after,
+.rtl #main-menu .sub-menu li.parent:after {
+	display: none
+}
+.rtl .page-section.v1-one .wr-element:before {
+	right: -15px;
+}
+.rtl #left-menu {
+	float: left;
+}
+.rtl #left-menu button {
+	text-align: right;
+}
+.rtl .subscribe {
+	text-align: left;
+}
+.rtl .subscribe .form-group .form-control {
+	padding: 0 40px 0 0;
+}
+.rtl .form-inline .form-group {
+	position: relative;
+}
+.rtl .subscribe .form-group:before {
+	right: 15px;
+}
+.rtl .page-section.v2-one .subscribe .form-group:before {
+	right: 116px;
+}
