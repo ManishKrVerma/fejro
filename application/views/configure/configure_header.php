@@ -28,10 +28,10 @@
 
         <script src="<?php echo base_url(); ?>assets/plugins/bootstrap3/js/bootstrap.js"></script>
         <script src="<?php echo base_url(); ?>assets/plugins/jquery.blockUI.min.js"></script>
-
         <link href="<?php echo base_url(); ?>assets/css/custom/configure_main.css" rel="stylesheet">
         <script src="<?php echo base_url(); ?>assets/js/custom/configure_main.js"></script> 
         <script src="<?php echo base_url(); ?>assets/js/constant.js"></script> 
+		<link href="<?php echo base_url(); ?>assets/css/custom/dashboard.css" rel="stylesheet">
 
     </head>
     <body>

@@ -234,6 +234,7 @@ class Beat_model extends CI_Model {
 	  * This function is used to save message and make new user if email not exits.
 	  */
 		function save_message(){
+			date_default_timezone_set('Asia/Kolkata');
 			$this->db->from('fejiro_item as fi');
 			$this->db->join('fejiro_users as fu','fi.FK_userid_id = fu.user_id');
 			$this->db->where('fi.item_id',$_POST['item']);
@@ -246,10 +247,11 @@ class Beat_model extends CI_Model {
 			if($this->session->userdata('userID') != ''){
 				$userId = $this->session->userdata('userID');
 			}else{
-				$password_hash = substr(implode('',range('a','z')).implode('',range('A','Z')).implode('',range('1','9')),0,8);
+				$password = substr(implode('',range('a','z')).implode('',range('A','Z')).time(),0,8);
+				$hashed_password = sha1('admin' . (md5('admin' . $password)));
 				$insert_User = array(
 						'email' => $_POST['email'],
-						'password_hash' => md5($password_hash),
+						'password_hash' => $hashed_password,
 						'created_date' => date('Y-m-d'),
 						'created_time' => date('H:i:s'),
 						'status' => 'active',
@@ -264,7 +266,7 @@ class Beat_model extends CI_Model {
 					$to = $_POST['email'];
 					$subject = "Welcome to beatsrack";
 					$message = 'Dear user,/n';
-					$message .= "Your password : $password_hash /n";
+					$message .= "Your password : $password  /n";
 					$e_config = array(
 										'charset'=>'utf-8',
 										'wordwrap'=> TRUE,
@@ -277,13 +279,12 @@ class Beat_model extends CI_Model {
 					$this->email->to($to); 
 					$this->email->subject($subject);
 					$this->email->message($message);	
-					//$this->email->send();
+					$this->email->send();
 					$return = 'Please Check your email for your password.';
 				}else{
 					return false;
 				}
 			}
-			date_default_timezone_set('Asia/Kolkata');
 			$insert_Message = array(
 						'email' => isset($_POST['email'])?$_POST['email']:$producer['email'],
 						'phone' => isset($_POST['email'])?$_POST['email']:'',
