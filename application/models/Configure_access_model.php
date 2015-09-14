@@ -485,7 +485,7 @@ class Configure_access_model extends CI_Model {
     function get_list_of_current_month_beats($current_user_id) {
 		$this->db->order_by('item_id','desc');
 		$this->db->where('status' , 'active');
-		$this->db->like('added_date',date('Y-m-'),'after');
+		//$this->db->like('added_date',date('Y-m-'),'after');
 		if($current_user_id != 'all'){
 			$this->db->where(array('FK_userid_id' => $current_user_id));
         }
@@ -501,7 +501,7 @@ class Configure_access_model extends CI_Model {
 	function get_list_of_current_users() {
 		$this->db->order_by('user_id','desc');
 		$this->db->where(array('status' => 'active','role'=>'user'));
-		$this->db->like('created_date',date('Y-m-'),'after');
+		//$this->db->like('created_date',date('Y-m-'),'after');
 		$db_result = $this->db->get('fejiro_users');
         if ($db_result && $db_result->num_rows() > 0){ 
 			$data_value = $db_result->result_array();

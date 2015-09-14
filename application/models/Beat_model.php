@@ -233,7 +233,7 @@ class Beat_model extends CI_Model {
 	 /** =========================================================
 	  * This function is used to save message and make new user if email not exits.
 	  */
-		function save_message(){
+		function save_message($result){
 			date_default_timezone_set('Asia/Kolkata');
 			$this->db->from('fejiro_item as fi');
 			$this->db->join('fejiro_users as fu','fi.FK_userid_id = fu.user_id');
@@ -246,6 +246,15 @@ class Beat_model extends CI_Model {
 			
 			if($this->session->userdata('userID') != ''){
 				$userId = $this->session->userdata('userID');
+			}else if($result == FALSE){
+				$this->db->where('email',$_POST['email']);
+				$user = $this->db->get('fejiro_users');
+				if($user)
+					$producer = $res->row_array();
+				else
+					return false;
+				$userId = $producer['user_id'];
+				$return = 'Thanks for your comment.';
 			}else{
 				$password = substr(implode('',range('a','z')).implode('',range('A','Z')).time(),0,8);
 				$hashed_password = sha1('admin' . (md5('admin' . $password)));
@@ -265,8 +274,11 @@ class Beat_model extends CI_Model {
 					#Email sending start..
 					$to = $_POST['email'];
 					$subject = "Welcome to beatsrack";
-					$message = 'Dear user,/n';
-					$message .= "Your password : $password  /n";
+					$message = 'Dear user,\n\n';
+					$message .= 'You are just commented on Beatsrack.,\n\n';
+					$message .= "Comment : ".$_POST['comment'];
+					$message .= "For details you can login to beatsrack \n\n\n";
+					$message .= 'Login details are : \n Email ='.isset($_POST['email'])?$_POST['email']:$producer['email'].'\n password : $password  \n';
 					$e_config = array(
 										'charset'=>'utf-8',
 										'wordwrap'=> TRUE,
@@ -279,7 +291,7 @@ class Beat_model extends CI_Model {
 					$this->email->to($to); 
 					$this->email->subject($subject);
 					$this->email->message($message);	
-					$this->email->send();
+					//$this->email->send();
 					$return = 'Please Check your email for your password.';
 				}else{
 					return false;

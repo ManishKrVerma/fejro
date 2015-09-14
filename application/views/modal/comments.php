@@ -1,3 +1,8 @@
+<style>
+.error{
+	color: rgba(239, 8, 8, 0.79);
+}
+</style>
 <div id="myModal" class="modal fade" role="dialog">
 	  <div class="modal-dialog">
 <div class="modal-content">
@@ -20,7 +25,7 @@
 
 				  <div class="form-group">
 					<label for="phone">Phone:</label>
-					<input type="text" name="phone" id="phone" class="form-control" placeholder="Enter Your Phone Number">
+					<input type="number" name="phone" id="phone" class="form-control" placeholder="Enter Your Phone Number">
 				  </div>
 					<?php } ?>
 				  <div class="form-group">

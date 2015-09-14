@@ -25,7 +25,7 @@
 		?>
 		<div class="panel panel-primary custom-panel">
 		  <div class="panel-heading text-center">
-			 <h3 class="panel-title">This months' My Beats ( <?php echo $myBeats; ?> )</h3>
+			 <h3 class="panel-title">My Beats ( <?php echo $myBeats; ?> )</h3>
 		  </div>
 		  <div class="panel-body">
 			 <div class="progress-group">

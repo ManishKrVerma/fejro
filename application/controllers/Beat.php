@@ -55,8 +55,9 @@ class Beat extends CI_Controller {
 		}else{
 			$result = $this->obj_rm->check_availability();
 		}
-		if($result){
-			$res = $this->obj_ca->save_message();
+		
+		/*if($result){*/
+			$res = $this->obj_ca->save_message($result);
 			if($res){
 				$return['message'] = $res;
 				$return['status'] = 'success';
@@ -64,10 +65,10 @@ class Beat extends CI_Controller {
 				$return['message'] = $res;
 				$return['status'] = 'error';
 			}
-		}else{
+		/*}else{
 			$return['message'] = 'Email already exists.Please login to comment with this email.';
 			$return['status'] = 'error';
-		}
+		}*/
 		
 		echo json_encode($return);
 	}

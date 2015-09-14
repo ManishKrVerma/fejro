@@ -23,7 +23,7 @@
 		?>
 	   <div class="panel panel-primary custom-panel">
 		  <div class="panel-heading text-center">
-			 <h3 class="panel-title">This months' My Racks ( <?php echo $Beats; ?> )</h3>
+			 <h3 class="panel-title">My Racks ( <?php echo $Beats; ?> )</h3>
 		  </div>
 		  <div class="panel-body">
 			 <div class="progress-group">
@@ -80,7 +80,7 @@
 		?>
 		<div class="panel panel-primary custom-panel">
 		  <div class="panel-heading text-center">
-			 <h3 class="panel-title">This months' My Beats ( <?php echo $myBeats; ?> )</h3>
+			 <h3 class="panel-title">My Beats ( <?php echo $myBeats; ?> )</h3>
 		  </div>
 		  <div class="panel-body">
 			 <div class="progress-group">
@@ -114,7 +114,7 @@
 	<div class="col-md-4">
                <div class="panel panel-primary custom-panel">
                   <div class="panel-heading text-center">
-                     <h3 class="panel-title">This months' Users</h3>
+                     <h3 class="panel-title">Users</h3>
                   </div>
                   <div class="panel-body">
                      <div class="progress-group">

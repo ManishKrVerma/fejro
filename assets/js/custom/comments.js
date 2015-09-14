@@ -17,13 +17,13 @@ $('document').ready(function () {
             email: {
                 required: true,
 				email: true,
-				remote:{
+				/*remote:{
 					url: APP_URL + "login/check_availability",
 					type: "post",
 					data: {
 						param: 'registration'
 					}
-				}
+				}*/
             },
             phone: {
                 required: true,
@@ -37,7 +37,7 @@ $('document').ready(function () {
             email: {
                 required: "Email is required",
 				email : 'Email Not Valid',
-				remote: "Email already exists.Please login to comment with this email."
+				//remote: "Email already exists.Please login to comment with this email."
             },
 			phone: {
                 required: "Phone is required",
@@ -66,7 +66,7 @@ $('document').ready(function () {
                 if (response.status == 'success') {
                     $('.comment-error').html("<div class='alert alert-success fade in'>\n\
                         <button class='close' type='button' data-dismiss='alert'>x</button>\n\
-                        <strong>" + response.message + "</strong> <a id='signinlink' href='"+APP_URL+'login'+"'>Sign In</a></div>");
+                        <strong>" + response.message + "</strong></div>");
                 }
                 else {
                     $('.comment-error').html("<div class='alert alert-danger fade in'>\n\
