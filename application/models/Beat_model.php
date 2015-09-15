@@ -235,6 +235,7 @@ class Beat_model extends CI_Model {
 	  */
 		function save_message($result){
 			date_default_timezone_set('Asia/Kolkata');
+			
 			$this->db->from('fejiro_item as fi');
 			$this->db->join('fejiro_users as fu','fi.FK_userid_id = fu.user_id');
 			$this->db->where('fi.item_id',$_POST['item']);
@@ -250,10 +251,10 @@ class Beat_model extends CI_Model {
 				$this->db->where('email',$_POST['email']);
 				$user = $this->db->get('fejiro_users');
 				if($user)
-					$producer = $res->row_array();
+					$user = $user->row_array();
 				else
 					return false;
-				$userId = $producer['user_id'];
+				$userId = $user['user_id'];
 				$return = 'Thanks for your comment.';
 			}else{
 				$password = substr(implode('',range('a','z')).implode('',range('A','Z')).time(),0,8);
@@ -291,15 +292,15 @@ class Beat_model extends CI_Model {
 					$this->email->to($to); 
 					$this->email->subject($subject);
 					$this->email->message($message);	
-					//$this->email->send();
-					$return = 'Please Check your email for your password.';
+					$this->email->send();
+					$return = 'Thanks for your comment. Check email to see copy of your comment.';
 				}else{
 					return false;
 				}
 			}
 			$insert_Message = array(
 						'email' => isset($_POST['email'])?$_POST['email']:$producer['email'],
-						'phone' => isset($_POST['email'])?$_POST['email']:'',
+						'phone' => isset($_POST['phone'])?$_POST['phone']:'',
 						'message' => $_POST['comment'],
 						'item_id' => $_POST['item'],
 						'message_to' => $producer['user_id'],
