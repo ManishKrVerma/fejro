@@ -275,11 +275,11 @@ class Beat_model extends CI_Model {
 					#Email sending start..
 					$to = $_POST['email'];
 					$subject = "Welcome to beatsrack";
-					$message = 'Dear user,\n\n';
-					$message .= 'You are just commented on Beatsrack.,\n\n';
-					$message .= "Comment : ".$_POST['comment'];
-					$message .= "For details you can login to beatsrack \n\n\n";
-					$message .= 'Login details are : \n Email ='.isset($_POST['email'])?$_POST['email']:$producer['email'].'\n password : $password  \n';
+					$message = "Dear user,<br/><br/>";
+					$message .= "You are just commented on Beatsrack.,<br/><br/>";
+					$message .= 'Comment : "'.$_POST['comment'].'"'."<br/><br/>";
+					$message .= "For details you can login to beatsrack <br/><br/>";
+					$message .= "Login details are : <br/> Email : ".(isset($_POST['email'])?$_POST['email']:$producer['email'])."<br/> password : $password  <br/><br/>";
 					$e_config = array(
 										'charset'=>'utf-8',
 										'wordwrap'=> TRUE,
