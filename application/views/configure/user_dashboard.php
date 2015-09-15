@@ -152,7 +152,7 @@
 					<div class="panel panel-default ">
 						<div class="panel-heading">
 							<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="#outbox<?php echo $outbox['message_id'];?>" class="collapsed" aria-expanded="false">Subject : <?php echo substr($inbox['message'],0,100); ?></a>
+							<a data-toggle="collapse" data-parent="#accordion" href="#outbox<?php echo $outbox['message_id'];?>" class="collapsed" aria-expanded="false">Subject : <?php echo substr($outbox['message'],0,100); ?></a>
 							</h4>
 						</div>
 						<div id="outbox<?php echo $outbox['message_id'];?>" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
@@ -163,14 +163,14 @@
 									</div>
 									
 									<div class="col-md-3 text-right">
-										<em><?php echo date('F d, Y',strtotime($inbox['date_time']));?><em>
+										<em><?php echo date('F d, Y',strtotime($outbox['date_time']));?><em>
 										</em></em>
 									</div>
 									<div class="col-md-12">
 										<hr>
 									</div>
 									<div class="col-md-12">
-										<p><?php echo $inbox['message'];?></p>
+										<p><?php echo $outbox['message'];?></p>
 										<hr>
 									</div>
 								</div>

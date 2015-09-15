@@ -236,14 +236,14 @@
 										</div>
 										
 										<div class="col-md-3 text-right">
-											<em><?php echo date('F d, Y',strtotime($inbox['date_time']));?><em>
+											<em><?php echo date('F d, Y',strtotime($outbox['date_time']));?><em>
 											</em></em>
 										</div>
 										<div class="col-md-12">
 											<hr>
 										</div>
 										<div class="col-md-12">
-											<p><?php echo $inbox['message'];?></p>
+											<p><?php echo $outbox['message'];?></p>
 											<hr>
 										</div>
 									</div>
