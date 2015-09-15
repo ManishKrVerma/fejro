@@ -8,7 +8,7 @@
 					
 				</div>
 			</div>
-			<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Comment</button>
+			<button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Message to producer</button>
 		</div>
 		<div class="container_inner_product col-xs-12 col-sm-12 col-md-5 col-lg-5">
 			<div class="product_item_desc">

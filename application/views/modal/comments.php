@@ -8,7 +8,7 @@
 <div class="modal-content">
 	 <div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		<h2 class="modal-title" id="myModalLabel">Type Your Comment</h2>
+		<h2 class="modal-title" id="myModalLabel">Type Your Message</h2>
 	 </div>
 	 <div class="modal-body">
 		<br>
@@ -29,14 +29,14 @@
 				  </div>
 					<?php } ?>
 				  <div class="form-group">
-					<label for="comment">Comment:</label>
-					<textarea class="form-control" placeholder="Enter Your Comment" name="comment"></textarea>
+					<label for="comment">Message:</label>
+					<textarea class="form-control" placeholder="Enter Your Message" name="comment"></textarea>
 				  </div>
 				 
 				 <div class="row form-group">
 					
 					<div class="col-md-12">
-					   <button type="submit" class="btn btn-success pull-right">Comment</button>
+					   <button type="submit" class="btn btn-success pull-right">Submit</button>
 					</div>
 				 </div>
 				 

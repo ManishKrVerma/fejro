@@ -44,7 +44,7 @@ $('document').ready(function () {
 				minlength: "At least 10 characters are requried "
             },
 			comment: {
-                required: "Comment is required"
+                required: "Message is required"
             },
         },
         submitHandler: function (form) {
@@ -90,7 +90,7 @@ $('document').ready(function () {
         },
         messages: {
 			comment: {
-                required: "Comment is required"
+                required: "Message is required"
             },
         },
         submitHandler: function (form) {

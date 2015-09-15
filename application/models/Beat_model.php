@@ -255,7 +255,7 @@ class Beat_model extends CI_Model {
 				else
 					return false;
 				$userId = $user['user_id'];
-				$return = 'Thanks for your comment.';
+				$return = 'Thanks for your Message.';
 			}else{
 				$password = substr(implode('',range('a','z')).implode('',range('A','Z')).time(),0,8);
 				$hashed_password = sha1('admin' . (md5('admin' . $password)));
@@ -276,8 +276,8 @@ class Beat_model extends CI_Model {
 					$to = $_POST['email'];
 					$subject = "Welcome to beatsrack";
 					$message = "Dear user,<br/><br/>";
-					$message .= "You are just commented on Beatsrack.,<br/><br/>";
-					$message .= 'Comment : "'.$_POST['comment'].'"'."<br/><br/>";
+					$message .= "You are just Message on Beatsrack.,<br/><br/>";
+					$message .= 'Message : "'.$_POST['comment'].'"'."<br/><br/>";
 					$message .= "For details you can login to beatsrack <br/><br/>";
 					$message .= "Login details are : <br/> Email : ".(isset($_POST['email'])?$_POST['email']:$producer['email'])."<br/> password : $password  <br/><br/>";
 					$e_config = array(
@@ -293,7 +293,7 @@ class Beat_model extends CI_Model {
 					$this->email->subject($subject);
 					$this->email->message($message);	
 					$this->email->send();
-					$return = 'Thanks for your comment. Check email to see copy of your comment.';
+					$return = 'Thanks for your Message. Check email to see copy of your Message.';
 				}else{
 					return false;
 				}
@@ -309,7 +309,7 @@ class Beat_model extends CI_Model {
 					);
 			$this->db->insert('fejiro_message',$insert_Message);
 			if($this->db->insert_id()){
-				return isset($return)?$return:'Thanks for your comment.';
+				return isset($return)?$return:'Thanks for your Message.';
 			}else{
 				return false;
 			}
