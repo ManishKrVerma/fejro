@@ -127,13 +127,18 @@
 											</div>
 										</form>
 										-->
+										<?php
+										$this->load->model('comman_model');
+										$categories = $this->comman_model->get_all_category();
+										?>
 <form action="<?php echo base_url('search/beat');?>">
 	<select name="category">
 	<?php echo $getCategory = trim($this->input->get('category')); ?>
 	<option value="">Select Category</option>
-	<option value="country"  <?php echo ($getCategory == 'country' ? 'selected':'')?> >country</option>
-	<option value="Opera" <?php echo ($getCategory == 'Opera' ? 'selected':'')?> >Opera</option>
-	<option value="pop" <?php echo ($getCategory == 'pop' ? 'selected':'')?> >pop</option>
+	<?php 
+	foreach($categories as $category){ ?>
+	<option value="<?php echo $category; ?>"  <?php echo ($getCategory == $category ? 'selected':'')?> ><?php echo $category; ?></option>
+	<?php } ?>
 	</select>
 	<input type="text"  name="beat" value="<?php echo $this->input->get('beat'); ?>" >
 	<button type="submit">Search </button>
