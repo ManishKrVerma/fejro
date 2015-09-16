@@ -18,6 +18,7 @@ class Welcome extends CI_Controller {
 		$data['Soul'] = $this->obj_wel->get_beat_by_item_gener_Soul();
 		$data['reggae'] = $this->obj_wel->get_beat_by_item_gener_reggae();
 		$data['Rock'] = $this->obj_wel->get_beat_by_item_gener_Rock();
+		$data['banners'] = $this->obj_wel->get_all_banners();
 		
 		$data['feature1'] = $this->obj_wel->get_detail_of_beat_by_feature1();
 		$data['feature3'] = $this->obj_wel->get_detail_of_beat_by_feature3();

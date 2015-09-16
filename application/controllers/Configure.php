@@ -599,6 +599,37 @@ class Configure extends CI_Controller {
 	
 	
 	
+	function banner($action='',$id='') {
+		if($this->session->userdata('role') == 'admin'){
+			#load required model
+			$this->load->model('Configure_access_model', 'obj_ca', TRUE);
+			if($action != ''){
+				if($action == 'delete'){
+					$this->obj_ca->delete_banner($id);
+					redirect($_SERVER['HTTP_REFERER']);
+				}else if($action == 'add'){
+					if($this->input->post('submit')){
+						$this->obj_ca->add_banner();
+						redirect('configure/banner');
+					}else{
+						$this->load->view('configure/configure_header');
+						$this->load->view('configure/add_banner');
+						$this->load->view('configure/configure_footer');
+					}
+				}
+			}else{
+				$data['banners'] = $this->obj_ca->get_list_of_all_banners();
+
+				$this->load->view('configure/configure_header');
+				$this->load->view('configure/banners', $data);
+				$this->load->view('configure/configure_footer');
+			}
+			
+		}else{
+			echo 'You are not authorized to access this page. Please contact to system administrater.';
+		}
+    }
+	
 	
 	
 	

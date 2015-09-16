@@ -9,7 +9,7 @@
 								  <!-- Wrapper for slides -->
 								  <div class="carousel-inner" role="listbox">
 									<?php
-										if($feature1){
+										/*if($feature1){
 											$i =0;
 											foreach($feature1 as $value){
 											if($i==0){
@@ -27,6 +27,20 @@
 															<span>Know More</span>
 														</a>
 													  </div>
+													</div>';												
+											}
+										}*/if($banners){
+											$i =0;
+											foreach($banners as $value){
+											if($i==0){
+												echo '<div class="item active">';
+											}else{
+												echo '<div class="item">';
+											}
+											$i++;
+												echo '
+													  <img src="'.base_url().'uploads/'.$value['banner_image'].'" alt="">
+													  
 													</div>';												
 											}
 										}

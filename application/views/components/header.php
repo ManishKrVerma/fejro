@@ -104,6 +104,7 @@
 							<div class="col-md-6 col-sm-7 col-xs-12">
 								<nav class="navbar navbar-default search-cat">
 									<div class="collapse navbar-collapse">
+									<!--
 										<ul class="nav navbar-nav">
 											<li class="dropdown">
 												<a href="#" class="dropdown-toggle0" data-toggle="dropdown0" role="button" aria-expanded="false">Search Category</a>
@@ -125,6 +126,19 @@
 											<a href="#" class="input-group-addon"><i class="fa fa-search"></i></a>
 											</div>
 										</form>
+										-->
+<form action="<?php echo base_url('search/beat');?>">
+	<select name="category">
+	<?php echo $getCategory = trim($this->input->get('category')); ?>
+	<option value="">Select Category</option>
+	<option value="country"  <?php echo ($getCategory == 'country' ? 'selected':'')?> >country</option>
+	<option value="Opera" <?php echo ($getCategory == 'Opera' ? 'selected':'')?> >Opera</option>
+	<option value="pop" <?php echo ($getCategory == 'pop' ? 'selected':'')?> >pop</option>
+	</select>
+	<input type="text"  name="beat" value="<?php echo $this->input->get('beat'); ?>" >
+	<button type="submit">Search </button>
+</form>
+										
 									</div><!-- .navbar-collapse -->
 								</nav><!-- .navbar-default -->
 							</div><!-- .col-md-6 -->

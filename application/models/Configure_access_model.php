@@ -566,4 +566,24 @@ class Configure_access_model extends CI_Model {
 				);
 		$this->db->insert('fejiro_message',$insert_Message);
 	}
+	
+	function get_list_of_all_banners(){
+		$res = $this->db->get('fejiro_banner');
+		$banners = $res->result_array();
+		return $banners;
+	}
+	
+	function delete_banner($id){
+		$this->db->where('banner_id',$id);
+		$this->db->delete('fejiro_banner');
+	}
+	
+	function add_banner(){
+		date_default_timezone_set('Asia/Kolkata');
+		$Data = array(
+					'banner_image'=>$this->input->post('banner_image'),
+					'created_on'=> date('Y-m-d H:i:s'),
+					);
+		$this->db->insert('fejiro_banner',$Data);
+	}
 }

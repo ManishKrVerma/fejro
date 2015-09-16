@@ -53,6 +53,8 @@
       <ul class="nav navbar-nav">
 		<li class="li_configure" ><a href="<?php echo base_url(); ?>configure">Dashboard</a></li>
 		<?php if($this->session->userdata('role') == 'admin'){?>
+		<li class="li_new_add_beats"><a href="<?php echo base_url(); ?>configure/banner">Banner</a></li>
+		<li class="li_new_add_beats"><a href="<?php echo base_url(); ?>configure/banner/add">Add Banner</a></li>
 		<li class="li_new_add_beats"><a href="<?php echo base_url(); ?>configure/my_rack">My Rack</a></li>
 		<li class="li_my_ads"><a href="<?php echo base_url(); ?>configure/my_ads">My Ads</a></li>
 		<li class="li_view_user"><a href="<?php echo base_url(); ?>configure/view_user">Users List</a></li>

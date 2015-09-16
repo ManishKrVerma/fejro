@@ -487,6 +487,12 @@ class Welcome_model extends CI_Model {
 		}	 
 	}
 	
+	function get_all_banners(){
+		$res = $this->db->get('fejiro_banner');
+		$banners = $res->result_array();
+		return $banners;
+	}
+	
 	
 	
 }
